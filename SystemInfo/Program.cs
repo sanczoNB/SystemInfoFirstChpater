@@ -41,8 +41,15 @@ namespace SystemInfo
                 variables += variable.Key + " = " + variable.Value + "\n";
             }
             Console.WriteLine("\nZmienne środowiskowe:\n" + variables);
-        }
 
-        
+            //Dyski logiczne
+            string[] disks = Environment.GetLogicalDrives();
+            string driveinfo = "\nDyski: ";
+            foreach (var disk in disks)
+            {
+                driveinfo += disk + " ";
+            }
+            Console.WriteLine(driveinfo + "\n");
+        }
     }
 }
