@@ -29,6 +29,18 @@ namespace SystemInfo
             Console.WriteLine("SystemInfo\n---------\n");
             Console.WriteLine(System + "\n");
             Console.WriteLine(user + "\n");
+
+            Console.WriteLine("Katalog domowy użytkownika pobrany za pomocą zmiennej środowiskowej = " +
+                Environment.GetEnvironmentVariable("USERPROFILE"));
+            
+            //Zmiennie środowiskowe
+            string variables = "";
+            var environmentVariables = Environment.GetEnvironmentVariables();
+            foreach (System.Collections.DictionaryEntry variable in environmentVariables)
+            {
+                variables += variable.Key + " = " + variable.Value + "\n";
+            }
+            Console.WriteLine("\nZmienne środowiskowe:\n" + variables);
         }
 
         
